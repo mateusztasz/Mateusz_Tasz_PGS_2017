@@ -1,0 +1,25 @@
+
+create table CUSTOMER(CustomerId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                      Login VARCHAR(100),
+                      Pass VARCHAR(100),
+                      Name VARCHAR(20),
+                      Surname VARCHAR(20),
+                      Address VARCHAR(100),
+                      Phone INT);
+                      
+create table RENTAL(CustomerId INT PRIMARY KEY AUTO_INCREMENT,
+                    MovieId INT,
+                    DueRented DATE);
+                    
+create table RENTAL_HISTORY(CustomerId INT PRIMARY KEY AUTO_INCREMENT,
+                            MovieId INT,
+                            DueRented DATE);                    
+
+create table MOVIE(MovieId  INT PRIMARY KEY AUTO_INCREMENT,
+                   Title  VARCHAR(50), 
+                   Rating FLOAT,
+                   Duration INT);
+                   
+insert into CUSTOMER(Login, Pass, Name, Surname, Address,  Phone) 
+            values ('admin','admin','Mateusz','Tasz','Wroclaw', 334222113);                  
+
