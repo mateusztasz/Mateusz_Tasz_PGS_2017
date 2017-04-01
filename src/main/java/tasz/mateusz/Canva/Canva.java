@@ -1,12 +1,13 @@
 package tasz.mateusz.Canva;
 
+import tasz.mateusz.Exception.FinishApplicationException;
+
 /**
- * Created by taszzmat on 2017-03-31.
+ * Created by Mateusz on 2017-03-31.
  */
 public abstract class Canva {
-    public Canva(){
-        System.out.println("Canva constructor.");
-    }
+
     abstract public void showMenu();
+    abstract public Canva perform () throws FinishApplicationException;
 
 }

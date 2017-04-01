@@ -24,8 +24,7 @@ public class Text {
     }
 
 
-
-    public static int levenshteinDistance(String s1, String s2) {
+    private static int levenshteinDistance(String s1, String s2) {
         s1 = s1.toLowerCase();
         s2 = s2.toLowerCase();
 
@@ -53,16 +52,18 @@ public class Text {
     }
 
 
-    public static boolean makeSure(String typed, String desired){
-        System.out.println("You typed a command >>"+typed+"<<");
-        System.out.println("Did you mean? >>"+desired+"<<");
-        System.out.println("Answer precisely >>[Y]/[N]<<");
+    public static boolean makeSure(String typed, String desired) {
+        System.out.println("You typed a command >>" + typed + "<<");
+        System.out.println("Did you mean? >>" + desired + "<<");
+        System.out.println("Confirm >>[Y]/[y] <<");
+        System.out.println("Decline >>[anything] <<");
+        System.out.print("$>");
         Scanner scan = new Scanner(System.in); //obiekt do odebrania danych od użytkownika
 
         String command = scan.nextLine().trim().toLowerCase();
-        if(command.equals("y")) return true;
 
-        return false;
+        return command.equals("y");
+
     }
 }
 
