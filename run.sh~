@@ -1,0 +1,4 @@
+#!/bin/bash
+mvn clean compile package;
+cd target;
+java -cp VideoRentalApp-1.0-SNAPSHOT-jar-with-dependencies.jar tasz.mateusz.App;
