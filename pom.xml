@@ -29,6 +29,7 @@
                     </descriptorRefs>
 
                 </configuration>
+
                 <executions>
                     <execution>
                         <id>make-assembly</id> <!-- this is used for inheritance merges -->
@@ -43,18 +44,12 @@
 
 
         <resources>
-            <!-- regular resource processsing for everything except logback.xml -->
+            <!-- regular resource processsing -->
             <resource>
                 <directory>src/main/resources</directory>
-                <excludes>
-                    <exclude>logback.xml</exclude>
-                </excludes>
             </resource>
-            <!-- resource processsing with a different output directory
-                 for logback.xml -->
 
         </resources>
-
 
     </build>
 </project>
