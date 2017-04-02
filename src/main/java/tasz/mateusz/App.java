@@ -11,9 +11,23 @@ import tasz.mateusz.Exception.FinishApplicationException;
 import java.lang.*;
 
 
-public class App {
+public class App implements Runnable {
 
     private static DataBaseHandler db;
+
+    public void run() {
+        while(true) {
+            try {
+                                
+                // Sleep an hour.
+                Thread.sleep(1000 * 60 * 60);
+
+            }
+            catch (InterruptedException ie) {
+
+            }
+        }
+    }
 
 
     /**
@@ -23,6 +37,8 @@ public class App {
      */
     public static void main(String[] args) {
         db = new DataBaseHandler();
+
+        (new Thread(new App())).start();
 
         Canva window = new EntryWindow(db);
 

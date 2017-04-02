@@ -2,7 +2,7 @@
 # Zadanie Java
 
 ### Problem
-Prowadzimy wypożyczalnię _[tu wstaw rodzaj]_ (filmów/samochodów/sprzętu komputerowego). Jesteśmy zobowiązani dostarczyć oprogramowanie wspomagające pracę wypożyczalni.
+Prowadzimy wypożyczalnię _[filmmów]_ . Jesteśmy zobowiązani dostarczyć oprogramowanie wspomagające pracę wypożyczalni.
 
 ### Zadanie
 Zadanie polega na stworzeniu aplikacji (mile widziana aplikacja okienkowa), która udostępni następujące funkcje:
