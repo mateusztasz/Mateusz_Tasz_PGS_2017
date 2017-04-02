@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="965af756-552d-4cac-b76e-dcdb4fea9e19" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/db.sqlite" afterPath="$PROJECT_DIR$/src/main/resources/db.sqlite" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ZadanieJava.md" afterPath="$PROJECT_DIR$/ZadanieJava.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tasz/mateusz/App.java" afterPath="$PROJECT_DIR$/src/main/java/tasz/mateusz/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/Canva.java" afterPath="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/Canva.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/EntryWindow.java" afterPath="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/EntryWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/MainWindow.java" afterPath="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/MainWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tasz/mateusz/DataBaseHandler.java" afterPath="$PROJECT_DIR$/src/main/java/tasz/mateusz/DataBaseHandler.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -106,13 +98,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/App.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataBaseHandler.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/DataBaseHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-122">
+              <caret line="92" column="34" lean-forward="false" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="34" />
+              <folding>
+                <marker date="1491125605177" expanded="true" signature="243:294" ph="select * fro... CUSTOMER" />
+                <marker date="1491125605177" expanded="true" signature="414:443" ph="select * fro... CUSTOMER" />
+                <marker date="1491125605177" expanded="true" signature="414:457" ph="select * fro... CUSTOMER" />
+                <marker date="1491125605177" expanded="true" signature="582:602" ph="insert into CUSTOMER... " />
+                <marker date="1491125605177" expanded="true" signature="582:666" ph="insert into CUSTOMER... " />
+                <marker date="1491125605177" expanded="true" signature="582:669" ph="insert into CUSTOMER... " />
+                <marker date="1491125605177" expanded="true" signature="1576:1598" ph="SELECT * FRO... CUSTOMER" />
               </folding>
             </state>
           </provider>
@@ -191,16 +201,6 @@
           <provider editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExitWindow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/ExitWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-170">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -986,12 +986,12 @@
       <workItem from="1491033937639" duration="1806000" />
       <workItem from="1491049613631" duration="25585000" />
       <workItem from="1491082766327" duration="1670000" />
-      <workItem from="1491124969234" duration="13785000" />
+      <workItem from="1491124969234" duration="14028000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58936000" />
+    <option name="totallyTimeSpent" value="59179000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1023,7 +1023,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4222586" sideWeight="0.60339737" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08674304" sideWeight="0.60339737" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.4913295" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33551556" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1353,22 +1353,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/DataBaseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="92" column="34" lean-forward="false" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="34" />
-          <folding>
-            <marker date="1491125605177" expanded="true" signature="243:294" ph="select * fro... CUSTOMER" />
-            <marker date="1491125605177" expanded="true" signature="414:443" ph="select * fro... CUSTOMER" />
-            <marker date="1491125605177" expanded="true" signature="414:457" ph="select * fro... CUSTOMER" />
-            <marker date="1491125605177" expanded="true" signature="582:602" ph="insert into CUSTOMER... " />
-            <marker date="1491125605177" expanded="true" signature="582:666" ph="insert into CUSTOMER... " />
-            <marker date="1491125605177" expanded="true" signature="582:669" ph="insert into CUSTOMER... " />
-            <marker date="1491125605177" expanded="true" signature="1576:1598" ph="SELECT * FRO... CUSTOMER" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/Canva.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1582,9 +1566,25 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/DataBaseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-122">
+          <caret line="92" column="34" lean-forward="false" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="34" />
+          <folding>
+            <marker date="1491125605177" expanded="true" signature="243:294" ph="select * fro... CUSTOMER" />
+            <marker date="1491125605177" expanded="true" signature="414:443" ph="select * fro... CUSTOMER" />
+            <marker date="1491125605177" expanded="true" signature="414:457" ph="select * fro... CUSTOMER" />
+            <marker date="1491125605177" expanded="true" signature="582:602" ph="insert into CUSTOMER... " />
+            <marker date="1491125605177" expanded="true" signature="582:666" ph="insert into CUSTOMER... " />
+            <marker date="1491125605177" expanded="true" signature="582:669" ph="insert into CUSTOMER... " />
+            <marker date="1491125605177" expanded="true" signature="1576:1598" ph="SELECT * FRO... CUSTOMER" />
           </folding>
         </state>
       </provider>

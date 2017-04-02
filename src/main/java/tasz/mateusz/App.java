@@ -18,7 +18,7 @@ public class App implements Runnable {
     public void run() {
         while(true) {
             try {
-                                
+
                 // Sleep an hour.
                 Thread.sleep(1000 * 60 * 60);
 
