@@ -4,17 +4,21 @@ package tasz.mateusz.Canva;
  * Created by Mateusz on 01.04.2017.
  */
 
+import tasz.mateusz.TextManipulation.Color;
 import tasz.mateusz.Exception.FinishApplicationException;
 
-public class ExitWindow extends Canva {
+public class ExitWindow extends AbstractWindow {
     ExitWindow(){
         showMenu();
     }
 
+    /**
+     * Method shows menu for ExitWindow (exit application)
+     */
     @Override
     public void showMenu() {
 
-        System.out.println();
+        System.out.println(Color.CYAN);
         System.out.println("============================");
         System.out.println("|         GOOD BYE         |");
         System.out.println("============================");
@@ -22,14 +26,17 @@ public class ExitWindow extends Canva {
         System.out.println("| It was a pleasure to     |");
         System.out.println("| to work with You.        |");
         System.out.println("|==========================|");
+        System.out.print(Color.RESET);
     }
 
+
+    /**
+     * Method performs action for ExitWindow (exit application)
+     */
     @Override
-    public Canva perform() throws FinishApplicationException {
+    public AbstractWindow perform() throws FinishApplicationException {
         throw new FinishApplicationException("End this application");
     }
-
-
 
 }
 
