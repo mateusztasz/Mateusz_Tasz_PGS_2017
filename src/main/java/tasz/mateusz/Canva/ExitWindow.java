@@ -23,7 +23,7 @@ public class ExitWindow extends AbstractWindow {
         System.out.println("|         GOOD BYE         |");
         System.out.println("============================");
         System.out.println("|                          |");
-        System.out.println("| It was a pleasure to     |");
+        System.out.println("| It was a pleasure        |");
         System.out.println("| to work with You.        |");
         System.out.println("|==========================|");
         System.out.print(Color.RESET);

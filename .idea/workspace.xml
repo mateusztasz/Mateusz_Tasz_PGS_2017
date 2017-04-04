@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="965af756-552d-4cac-b76e-dcdb4fea9e19" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tasz/mateusz/TextManipulation/Color.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/Canva.java" afterPath="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/AbstractWindow.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/tasz/mateusz/Text.java" afterPath="$PROJECT_DIR$/src/main/java/tasz/mateusz/TextManipulation/Text.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/db.sqlite" afterPath="$PROJECT_DIR$/src/main/resources/db.sqlite" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VideoRentalApp.iml" afterPath="$PROJECT_DIR$/VideoRentalApp.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tasz/mateusz/App.java" afterPath="$PROJECT_DIR$/src/main/java/tasz/mateusz/App.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/EntryWindow.java" afterPath="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/EntryWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/ExitWindow.java" afterPath="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/ExitWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/MainWindow.java" afterPath="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/MainWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tasz/mateusz/DataBaseHandler.java" afterPath="$PROJECT_DIR$/src/main/java/tasz/mateusz/DataBaseHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tasz/mateusz/TextManipulation/Text.java" afterPath="$PROJECT_DIR$/src/main/java/tasz/mateusz/TextManipulation/Text.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,38 +35,6 @@
       </PATH_ELEMENT>
       <PATH_ELEMENT>
         <option name="myItemId" value="db.sqlite [9]" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="db.sqlite [9]" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="main" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="db.sqlite [9]" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="main" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="CUSTOMER" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -114,6 +78,30 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="db.sqlite [2]" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="db.sqlite [2]" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="main" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
@@ -121,43 +109,13 @@
       <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="151" column="32" lean-forward="false" selection-start-line="151" selection-start-column="32" selection-end-line="151" selection-end-column="32" />
+            <state relative-caret-position="-968">
+              <caret line="144" column="29" lean-forward="false" selection-start-line="144" selection-start-column="29" selection-end-line="144" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1491224448976" expanded="true" signature="4220:4259" ph="select * fro... RENTAL" />
-                <marker date="1491224448976" expanded="true" signature="4633:4672" ph="select Title... MOVIE" />
-                <marker date="1491224448976" expanded="true" signature="5845:5886" ph="select Movie... MOVIE" />
-                <marker date="1491224448976" expanded="true" signature="6162:6226" ph="insert into RENTAL... " />
-                <marker date="1491224448976" expanded="true" signature="6283:6355" ph="INSERT INTO RENTAL... " />
-                <marker date="1491224448976" expanded="true" signature="7110:7163" ph="SELECT * FRO... RENTAL" />
-                <marker date="1491224448976" expanded="true" signature="8292:8339" ph="SELECT * FRO... RENTAL_HISTORY" />
-                <marker date="1491224448976" expanded="true" signature="8718:8757" ph="SELECT Title... MOVIE" />
-                <marker date="1491224448976" expanded="true" signature="9662:9695" ph="select * fro... MOVIE" />
-                <marker date="1491224448976" expanded="true" signature="10767:10802" ph="select * fro... MOVIE" />
+                <element signature="e#901#902#0" expanded="true" />
+                <element signature="e#929#930#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExitWindow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/ExitWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataBaseHandler.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/DataBaseHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -165,28 +123,76 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="66" column="7" lean-forward="true" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
+            <state relative-caret-position="595">
+              <caret line="48" column="35" lean-forward="false" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="35" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1491223695845" expanded="true" signature="1578:1614" ph="delete from " />
+                <element signature="imports" expanded="false" />
+                <marker date="1491251669380" expanded="true" signature="1810:1846" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/84081723-3025-4d24-a19c-cb49cc6ba03a/console.sql">
+      <file leaf-file-name="DataBaseHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/DataBaseHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+            <state relative-caret-position="285">
+              <caret line="110" column="68" lean-forward="false" selection-start-line="110" selection-start-column="60" selection-end-line="110" selection-end-column="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EntryWindow.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/EntryWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1736">
+              <caret line="214" column="13" lean-forward="false" selection-start-line="214" selection-start-column="13" selection-end-line="214" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#6889#6905#0" expanded="true" />
+                <marker date="1491297774951" expanded="true" signature="439:523" ph="insert into CUSTOMER... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Text.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/TextManipulation/Text.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="65" column="53" lean-forward="false" selection-start-line="65" selection-start-column="53" selection-end-line="65" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ResultSetMetaData.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/sql/ResultSetMetaData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="44" column="17" lean-forward="false" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExitWindow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/ExitWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="main.CUSTOMER" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/e5c5939a/84081723-3025-4d24-a19c-cb49cc6ba03a/main.CUSTOMER">
+        <entry file="dbDummy://dbtable:/f899766a/5dcd97fb-abda-4b92-acf6-5757acb05687/main.CUSTOMER">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
@@ -200,50 +206,68 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EntryWindow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/EntryWindow.java">
+      <file leaf-file-name="Date.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Date.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1127">
-              <caret line="206" column="23" lean-forward="true" selection-start-line="206" selection-start-column="23" selection-end-line="206" selection-end-column="23" />
+            <state relative-caret-position="2346">
+              <caret line="176" column="11" lean-forward="false" selection-start-line="176" selection-start-column="11" selection-end-line="176" selection-end-column="11" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1491224261017" expanded="true" signature="419:503" ph="insert into CUSTOMER... " />
-                <marker date="1491224261017" expanded="true" signature="2727:2778" ph="select * fro... CUSTOMER" />
-                <marker date="1491224261017" expanded="true" signature="2881:2924" ph="select * fro... CUSTOMER" />
-                <marker date="1491224261017" expanded="true" signature="5276:5298" ph="SELECT * FRO... CUSTOMER" />
-                <marker date="1491224261017" expanded="true" signature="7428:7450" ph="SELECT * FRO... CUSTOMER" />
+                <element signature="e#0#57201#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#6390#6391#0" expanded="false" />
+                <element signature="e#6438#6439#0" expanded="false" />
+                <element signature="e#6844#6845#0" expanded="false" />
+                <element signature="e#6875#6876#0" expanded="false" />
+                <element signature="e#7577#7578#0" expanded="false" />
+                <element signature="e#7625#7626#0" expanded="false" />
+                <element signature="e#8526#8527#0" expanded="false" />
+                <element signature="e#8578#8579#0" expanded="false" />
+                <element signature="e#10720#10721#0" expanded="false" />
+                <element signature="e#10750#10751#0" expanded="false" />
+                <element signature="e#28620#28621#0" expanded="false" />
+                <element signature="e#28671#28672#0" expanded="false" />
+                <element signature="e#29442#29443#0" expanded="false" />
+                <element signature="e#29506#29507#0" expanded="false" />
+                <element signature="e#30042#30043#0" expanded="false" />
+                <element signature="e#30120#30121#0" expanded="false" />
+                <element signature="e#31971#31972#0" expanded="false" />
+                <element signature="e#32021#32022#0" expanded="false" />
+                <element signature="e#32819#32820#0" expanded="false" />
+                <element signature="e#32872#32873#0" expanded="false" />
+                <element signature="e#33584#33585#0" expanded="false" />
+                <element signature="e#33655#33656#0" expanded="false" />
+                <element signature="e#34244#34245#0" expanded="false" />
+                <element signature="e#34289#34290#0" expanded="false" />
+                <element signature="e#34885#34886#0" expanded="false" />
+                <element signature="e#34934#34935#0" expanded="false" />
+                <element signature="e#35418#35419#0" expanded="false" />
+                <element signature="e#35465#35466#0" expanded="false" />
+                <element signature="e#36078#36079#0" expanded="false" />
+                <element signature="e#36131#36132#0" expanded="false" />
+                <element signature="e#36717#36718#0" expanded="false" />
+                <element signature="e#36764#36765#0" expanded="false" />
+                <element signature="e#37365#37366#0" expanded="false" />
+                <element signature="e#37418#37419#0" expanded="false" />
+                <element signature="e#37718#37719#0" expanded="false" />
+                <element signature="e#37754#37755#0" expanded="false" />
+                <element signature="e#38710#38711#0" expanded="false" />
+                <element signature="e#38770#38771#0" expanded="false" />
+                <element signature="e#39232#39233#0" expanded="false" />
+                <element signature="e#39292#39293#0" expanded="false" />
+                <element signature="e#39988#39989#0" expanded="false" />
+                <element signature="e#40069#40070#0" expanded="false" />
+                <element signature="e#57143#57144#0" expanded="false" />
+                <element signature="e#57197#57198#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractWindow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/AbstractWindow.java">
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2f7bb4c5-77b3-4a28-a39e-0993ed4754e2/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Text.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/TextManipulation/Text.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="48" lean-forward="true" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Color.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/TextManipulation/Color.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="45" lean-forward="false" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+            <state relative-caret-position="119">
+              <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -265,10 +289,16 @@
       <find>where</find>
       <find>Succes</find>
       <find>videos</find>
+      <find>succ</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="orm" />
+      </map>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -285,7 +315,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c856d94b-1c41-4226-8e5f-8d47b6d3d3ca/console.sql" />
         <option value="$PROJECT_DIR$/lite.sql" />
         <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/DataBase.java" />
-        <option value="dbtable:/f899766a/5dcd97fb-abda-4b92-acf6-5757acb05687/main.CUSTOMER" />
         <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/Action.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/FinishApplicationException.java" />
@@ -306,17 +335,21 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2f7bb4c5-77b3-4a28-a39e-0993ed4754e2/console.sql" />
         <option value="dbtable:/e5c5939a/84081723-3025-4d24-a19c-cb49cc6ba03a/main.CUSTOMER" />
         <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/Text.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/DataBaseHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/AbstractWindow.java" />
         <option value="dbtable:/e5c5939a/84081723-3025-4d24-a19c-cb49cc6ba03a/main.RENTAL_HISTORY" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/84081723-3025-4d24-a19c-cb49cc6ba03a/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/Color.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/ExitWindow.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/TextManipulation/Color.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/ExitWindow.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/DataBase/DataBaseHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/App.java" />
+        <option value="dbtable:/f899766a/5dcd97fb-abda-4b92-acf6-5757acb05687/main.CUSTOMER" />
+        <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/DataBase/Customer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/MainWindow.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/HashSet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/DataBaseHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/TextManipulation/Text.java" />
         <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/EntryWindow.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/MainWindow.java" />
       </list>
     </option>
   </component>
@@ -385,8 +418,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -404,8 +437,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -425,6 +459,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="05_maven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="05_maven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="05_maven" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -538,7 +586,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -547,7 +594,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../Desktop/ormlite-jdbc-5.0.jar!/" />
     <property name="settings.editor.selected.configurable" value="database.main" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)" />
   </component>
@@ -557,6 +604,9 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\taszzmat\Desktop\VideoRentalApp" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="tasz.mateusz.Canva" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Users\Mateusz\Documents\PWr\Job\Mateusz\PGS\05_maven\src\main\resources" />
@@ -718,6 +768,17 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
@@ -1031,11 +1092,12 @@
       <workItem from="1491082766327" duration="1670000" />
       <workItem from="1491124969234" duration="14028000" />
       <workItem from="1491203097365" duration="14731000" />
+      <workItem from="1491288785889" duration="8999000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73910000" />
+    <option name="totallyTimeSpent" value="87108000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1047,38 +1109,39 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.48487142" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44295302" sideWeight="0.5794621" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5659955" sideWeight="0.49755502" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4966443" sideWeight="0.46821517" order="12" side_tool="false" content_ui="tabs" x="1028" y="646" width="320" height="425" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45662847" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.48777506" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.295302" sideWeight="0.301956" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29787233" sideWeight="0.2526475" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44295302" sideWeight="0.4205379" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33878887" sideWeight="0.6104387" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5659955" sideWeight="0.49755502" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33878887" sideWeight="0.38956127" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.49755502" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.47921762" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3344519" sideWeight="0.49266502" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28728607" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24886535" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4966443" sideWeight="0.46821517" order="12" side_tool="false" content_ui="tabs" x="1028" y="646" width="320" height="425" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45662847" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3344519" sideWeight="0.49266502" order="0" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1121,7 +1184,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1130,19 +1193,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/sql/ResultSetMetaData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3502">
-          <caret line="229" column="11" lean-forward="false" selection-start-line="229" selection-start-column="11" selection-end-line="229" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#10023#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/f899766a/5dcd97fb-abda-4b92-acf6-5757acb05687/main.RENTAL" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5dcd97fb-abda-4b92-acf6-5757acb05687/console.sql" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a64d44d6-895b-4042-8530-74e3f5d5a109/console.sql" />
     <entry file="dbDummy://dbtable:/f899766a/a64d44d6-895b-4042-8530-74e3f5d5a109/main.sqlite_master" />
     <entry file="dbDummy://dbtable:/f899766a/5dcd97fb-abda-4b92-acf6-5757acb05687/main.MOVIE" />
     <entry file="file://$PROJECT_DIR$/lite.sql">
@@ -1153,7 +1203,6 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fba3c0da-9655-47eb-add5-7a59c28e9099/console.sql" />
-    <entry file="dbDummy://dbtable:/f899766a/5dcd97fb-abda-4b92-acf6-5757acb05687/main.CUSTOMER" />
     <entry file="dbDummy://dbtable:/f899766a/fba3c0da-9655-47eb-add5-7a59c28e9099/main.CUSTOMER" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/12626e44-94a8-4d25-82c7-7c8f8b0a0476/console.sql" />
     <entry file="dbDummy://dbtable:/f899766a/12626e44-94a8-4d25-82c7-7c8f8b0a0476/main.CUSTOMER" />
@@ -1225,10 +1274,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/f899766a/d52ad177-245c-4a28-98cc-5a892dd411b1/main.CUSTOMER" />
-    <entry file="dbDummy://dbtable:/f899766a/d52ad177-245c-4a28-98cc-5a892dd411b1/main.RENTAL_HISTORY" />
-    <entry file="dbDummy://dbtable:/f899766a/d52ad177-245c-4a28-98cc-5a892dd411b1/main.MOVIE" />
-    <entry file="dbDummy://dbtable:/f899766a/d52ad177-245c-4a28-98cc-5a892dd411b1/main.RENTAL" />
+    <entry file="dbDummy://dbtable:/f899766a/d52ad177-245c-4a28-98cc-5a892dd411b1/main.CUSTOMER">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/f899766a/d52ad177-245c-4a28-98cc-5a892dd411b1/main.RENTAL_HISTORY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/f899766a/d52ad177-245c-4a28-98cc-5a892dd411b1/main.MOVIE">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/f899766a/d52ad177-245c-4a28-98cc-5a892dd411b1/main.RENTAL">
+      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Date.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2346">
@@ -1238,6 +1332,8 @@
             <element signature="imports" expanded="false" />
             <element signature="e#6390#6391#0" expanded="false" />
             <element signature="e#6438#6439#0" expanded="false" />
+            <element signature="e#6844#6845#0" expanded="false" />
+            <element signature="e#6875#6876#0" expanded="false" />
             <element signature="e#7577#7578#0" expanded="false" />
             <element signature="e#7625#7626#0" expanded="false" />
             <element signature="e#8526#8527#0" expanded="false" />
@@ -1282,135 +1378,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2f7bb4c5-77b3-4a28-a39e-0993ed4754e2/console.sql" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/15b27b20-78cf-4378-aad4-53584d3f21f9/console.sql">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2f7bb4c5-77b3-4a28-a39e-0993ed4754e2/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f95ebf60-8109-410e-be15-70b50c8afbe4/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e5c5939a/84081723-3025-4d24-a19c-cb49cc6ba03a/main.MOVIE">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e5c5939a/84081723-3025-4d24-a19c-cb49cc6ba03a/main.RENTAL">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e5c5939a/84081723-3025-4d24-a19c-cb49cc6ba03a/main.RENTAL_HISTORY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e5c5939a/84081723-3025-4d24-a19c-cb49cc6ba03a/main.CUSTOMER">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/84081723-3025-4d24-a19c-cb49cc6ba03a/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="151" column="32" lean-forward="false" selection-start-line="151" selection-start-column="32" selection-end-line="151" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1491224448976" expanded="true" signature="4220:4259" ph="select * fro... RENTAL" />
-            <marker date="1491224448976" expanded="true" signature="4633:4672" ph="select Title... MOVIE" />
-            <marker date="1491224448976" expanded="true" signature="5845:5886" ph="select Movie... MOVIE" />
-            <marker date="1491224448976" expanded="true" signature="6162:6226" ph="insert into RENTAL... " />
-            <marker date="1491224448976" expanded="true" signature="6283:6355" ph="INSERT INTO RENTAL... " />
-            <marker date="1491224448976" expanded="true" signature="7110:7163" ph="SELECT * FRO... RENTAL" />
-            <marker date="1491224448976" expanded="true" signature="8292:8339" ph="SELECT * FRO... RENTAL_HISTORY" />
-            <marker date="1491224448976" expanded="true" signature="8718:8757" ph="SELECT Title... MOVIE" />
-            <marker date="1491224448976" expanded="true" signature="9662:9695" ph="select * fro... MOVIE" />
-            <marker date="1491224448976" expanded="true" signature="10767:10802" ph="select * fro... MOVIE" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/ExitWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/EntryWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1127">
-          <caret line="206" column="23" lean-forward="true" selection-start-line="206" selection-start-column="23" selection-end-line="206" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1491224261017" expanded="true" signature="419:503" ph="insert into CUSTOMER... " />
-            <marker date="1491224261017" expanded="true" signature="2727:2778" ph="select * fro... CUSTOMER" />
-            <marker date="1491224261017" expanded="true" signature="2881:2924" ph="select * fro... CUSTOMER" />
-            <marker date="1491224261017" expanded="true" signature="5276:5298" ph="SELECT * FRO... CUSTOMER" />
-            <marker date="1491224261017" expanded="true" signature="7428:7450" ph="SELECT * FRO... CUSTOMER" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/15b27b20-78cf-4378-aad4-53584d3f21f9/console.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f95ebf60-8109-410e-be15-70b50c8afbe4/console.sql" />
+    <entry file="dbDummy://dbtable:/e5c5939a/84081723-3025-4d24-a19c-cb49cc6ba03a/main.MOVIE" />
+    <entry file="dbDummy://dbtable:/e5c5939a/84081723-3025-4d24-a19c-cb49cc6ba03a/main.RENTAL" />
+    <entry file="dbDummy://dbtable:/e5c5939a/84081723-3025-4d24-a19c-cb49cc6ba03a/main.RENTAL_HISTORY" />
+    <entry file="dbDummy://dbtable:/e5c5939a/84081723-3025-4d24-a19c-cb49cc6ba03a/main.CUSTOMER" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/84081723-3025-4d24-a19c-cb49cc6ba03a/console.sql" />
     <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/AbstractWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1422,30 +1408,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/TextManipulation/Text.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/DataBase/DataBaseHandler.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="48" lean-forward="true" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+        <state relative-caret-position="595">
+          <caret line="48" column="35" lean-forward="false" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <marker date="1491251669380" expanded="true" signature="1810:1846" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/f899766a/5dcd97fb-abda-4b92-acf6-5757acb05687/main.CUSTOMER">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/App.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/DataBase/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="66" column="7" lean-forward="true" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
+        <state relative-caret-position="969">
+          <caret line="80" column="1" lean-forward="false" selection-start-line="80" selection-start-column="1" selection-end-line="80" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/sql/ResultSetMetaData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="44" column="17" lean-forward="false" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/HashSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-968">
+          <caret line="144" column="29" lean-forward="false" selection-start-line="144" selection-start-column="29" selection-end-line="144" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1491223695845" expanded="true" signature="1578:1614" ph="delete from " />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#929#930#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/DataBaseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+        <state relative-caret-position="285">
+          <caret line="110" column="68" lean-forward="false" selection-start-line="110" selection-start-column="60" selection-end-line="110" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/ExitWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/TextManipulation/Text.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="65" column="53" lean-forward="false" selection-start-line="65" selection-start-column="53" selection-end-line="65" selection-end-column="53" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tasz/mateusz/Canva/EntryWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1736">
+          <caret line="214" column="13" lean-forward="false" selection-start-line="214" selection-start-column="13" selection-end-line="214" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6889#6905#0" expanded="true" />
+            <marker date="1491297774951" expanded="true" signature="439:523" ph="insert into CUSTOMER... " />
+          </folding>
         </state>
       </provider>
     </entry>

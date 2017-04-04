@@ -1,12 +1,17 @@
 package tasz.mateusz;
 
 
-
+import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.dao.DaoManager;
+import com.j256.ormlite.jdbc.JdbcConnectionSource;
+import com.j256.ormlite.support.ConnectionSource;
 import tasz.mateusz.Canva.AbstractWindow;
 import tasz.mateusz.Canva.EntryWindow;
 import tasz.mateusz.Exception.FinishApplicationException;
 
 import java.lang.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Calendar;
@@ -82,4 +87,6 @@ public class App implements Runnable {
         }
     }
 
+
 }
+
