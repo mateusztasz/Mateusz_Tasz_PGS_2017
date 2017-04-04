@@ -6,9 +6,10 @@ package tasz.mateusz.Canva;
 
 import java.sql.*;
 import java.util.Scanner;
+import java.util.*;
 
-import tasz.mateusz.TextManipulation.Color;
 import tasz.mateusz.DataBaseHandler;
+import tasz.mateusz.TextManipulation.Color;
 
 public class EntryWindow extends AbstractWindow {
     /**
@@ -17,14 +18,14 @@ public class EntryWindow extends AbstractWindow {
     private DataBaseHandler db;
 
     private static final String CUSTOMER_CREATE_NEW =
-            "insert into CUSTOMER(Login, Pass, Name, Surname, Address, Phone) values(?,?,?,?,?,?);";
+            "INSERT INTO CUSTOMER(Login, Pass, Name, Surname, Address, Phone) VALUES(?,?,?,?,?,?);";
     private PreparedStatement customerCreateNewStatement;
 
     public EntryWindow(DataBaseHandler db) {
         this(db, null);
     }
 
-    public EntryWindow(DataBaseHandler db, String name) {
+    private EntryWindow(DataBaseHandler db, String name) {
         this.db = db;
         showMenu();
     }
@@ -87,61 +88,50 @@ public class EntryWindow extends AbstractWindow {
 
 
     /**
-     *
      * @return userId User identification from database if logged in. Otherwise returns -1
      */
-    private int login(){
+    private int login() {
         int userId = -1;
-        String CUSTOMER_LOGIN_SQL =
-                "select * from CUSTOMER where Login = ? and Pass = ?;";
-        PreparedStatement customerLoginStatement;
+        String sqlFindCustomer = "select * from CUSTOMER where Login = ? and Pass = ?;";
+        String sqlCustomerStar = "select * from CUSTOMER where CustomerId = ?;";
+        ResultSet resultSetFoundCustomer;
+        ResultSet resultSetCustomerStar;
 
-        String CUSTOMER_NAME =
-                "select * from CUSTOMER where CustomerId = ?;";
-        PreparedStatement customerNameStatement;
+        String login, pass;
+        String name = "", surname = "";
+
+        System.out.print("login: ");
+        Scanner scanLogin = new Scanner(System.in); //obiekt do odebrania danych od użytkownika
+        login = scanLogin.nextLine();
+
+        System.out.print("pass: ");
+        Scanner scanPass = new Scanner(System.in); //obiekt do odebrania danych od użytkownika
+        pass = scanPass.nextLine();
 
         try {
 
-            String login="",pass="";
-            String name="",surname="";
-
-            System.out.print("login: ");
-            Scanner scanLogin = new Scanner(System.in); //obiekt do odebrania danych od użytkownika
-            login = scanLogin.nextLine();
-
-            System.out.print("pass: ");
-            Scanner scanPass = new Scanner(System.in); //obiekt do odebrania danych od użytkownika
-            pass = scanPass.nextLine();
-
             // Look for a customer
-            customerLoginStatement = db.conn.prepareStatement(CUSTOMER_LOGIN_SQL);
-            customerLoginStatement.clearParameters();
-            customerLoginStatement.setString(1, login);
-            customerLoginStatement.setString(2, pass);
-            ResultSet resultSet = customerLoginStatement.executeQuery();
+            resultSetFoundCustomer = db.executeQuery(sqlFindCustomer, login, pass);
 
             // Localizes customer by its Id number
-            if (resultSet.next()){
-                userId = resultSet.getInt(1);
+            if (resultSetFoundCustomer.next()) {
+                userId = resultSetFoundCustomer.getInt(1);
             }
 
             // Get name of logged in customer
-            customerNameStatement = db.conn.prepareStatement(CUSTOMER_NAME);
-            customerNameStatement.clearParameters();
-            customerNameStatement.setString(1, Integer.toString(userId));
-            resultSet = customerLoginStatement.executeQuery();
-            if (resultSet.next()){
-                name = resultSet.getString("Name");
-                surname = resultSet.getString("surname");
+            resultSetCustomerStar = db.executeQuery(sqlCustomerStar, Integer.toString(userId));
+
+            if (resultSetCustomerStar.next()) {
+                name = resultSetCustomerStar.getString("Name");
+                surname = resultSetCustomerStar.getString("surname");
             }
 
             // Print info about success
-            if(userId>0) {
+            if (userId > 0) {
                 System.out.print(Color.GREEN);
-                System.out.println("Logged in successfully as "+name+" "+surname);
+                System.out.println("Logged in successfully as " + name + " " + surname);
                 System.out.print(Color.RESET);
-            }
-            else {
+            } else {
                 System.out.print(Color.RED);
                 System.out.println("Your login and password do not match.");
                 System.out.print(Color.RESET);
@@ -160,9 +150,12 @@ public class EntryWindow extends AbstractWindow {
      * Method list all Customers from databate. Prints only name and surname.
      */
     private void listCustomers() {
+        String sql = "SELECT * FROM CUSTOMER;";
+        ResultSet resultSet;
+
         try {
-            Statement stmt = db.conn.createStatement();
-            ResultSet resultSet = stmt.executeQuery("SELECT * FROM CUSTOMER;");
+
+            resultSet = db.executeQuery(sql);
 
             System.out.println(Color.YELLOW);
             System.out.println("List of all available customers. If you are one of them you may log in.");
@@ -206,53 +199,48 @@ public class EntryWindow extends AbstractWindow {
      * add row in database.
      * Does not log in!
      */
-    private void createUser(){
+    private void createUser() {
+        String sqlCreateUser = "insert into CUSTOMER(Login, Pass, Name, Surname, Address, Phone) values(?,?,?,?,?,?);";
+        String sqlCustomer = "SELECT * FROM CUSTOMER;";
+
+        ResultSet resultSetCustomer;
+        ResultSetMetaData resultSetCustomer_MetaData;
+
+        // Stores important data from user to procceed them to database handler
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        // Takes data from user
+        Scanner scanLogin = new Scanner(System.in);
+
         try {
-            String inputString;
-            int inputInt;
-            Scanner scanLogin = new Scanner(System.in); //obiekt do odebrania danych od użytkownika
-
-            // Prepare statement
-            customerCreateNewStatement = db.conn.prepareStatement(CUSTOMER_CREATE_NEW);
-            customerCreateNewStatement.clearParameters();
-
             // Get meta data about columns name
-            Statement stmt = db.conn.createStatement();
-            ResultSet resultSet = stmt.executeQuery("SELECT * FROM CUSTOMER;");
-            ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
-            int columnsNumber = resultSetMetaData.getColumnCount();
-
-
-            System.out.println("Col: "+ columnsNumber);
+            resultSetCustomer = db.executeQuery(sqlCustomer);
+            resultSetCustomer_MetaData = resultSetCustomer.getMetaData();
 
             // Enter data to add into database
-            for(int i = 2; i < columnsNumber+1; i++) {
-                System.out.print(resultSetMetaData.getColumnName(i) + " :");
-                if(resultSetMetaData.getColumnTypeName(i).equals("VARCHAR")){
-                    inputString = scanLogin.nextLine();
-                    customerCreateNewStatement.setString(i-1, inputString);
-                }
-                else if(resultSetMetaData.getColumnTypeName(i).equals("INT")){
+            for (int i = 2; i < resultSetCustomer_MetaData.getColumnCount() + 1; i++) {
 
-                    inputInt = Integer.parseInt(scanLogin.nextLine());
-                    customerCreateNewStatement.setInt(i-1, inputInt);
-                }
-
+                System.out.print(resultSetCustomer_MetaData.getColumnName(i) + " :");
+                map.put(resultSetCustomer_MetaData.getColumnName(i), scanLogin.nextLine());
             }
+
             System.out.println();
 
             // Add row into database
-            customerCreateNewStatement.executeUpdate();
+            db.executeUpdate(sqlCreateUser, map);
 
-        }
-        catch (NumberFormatException e){
+            System.out.print(Color.GREEN);
+            System.out.println("You have created a new user successfully.");
+            System.out.print(Color.RESET);
+
+        } catch (NumberFormatException e) {
             System.out.println(Color.RED);
-            System.out.println("Error occured:");
+            System.out.println("Error occurred:");
             System.out.println(e.getMessage());
-            System.out.println("A creating process has been stopped.");
+            System.out.println("A creating process has been stopped. Check your phone number.");
             System.out.println(Color.RESET);
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
+
             System.out.println(e.getMessage());
         }
     }

@@ -1,12 +1,13 @@
 package tasz.mateusz.Canva;
 
-import tasz.mateusz.TextManipulation.Color;
 import tasz.mateusz.DataBaseHandler;
+import tasz.mateusz.TextManipulation.Color;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.PreparedStatement;
+import java.util.List;
 import java.util.StringTokenizer;
 import java.util.NoSuchElementException;
 
@@ -42,10 +43,10 @@ public class MainWindow extends AbstractWindow {
     /**
      * Constructor
      *
-     * @param db
-     * @param userId
+     * @param db     database handler
+     * @param userId user identfication number. if > 0 then logged in
      */
-    public MainWindow(DataBaseHandler db, int userId) {
+    MainWindow(DataBaseHandler db, int userId) {
         this.db = db;
         this.userId = userId;
         showMenu();
@@ -85,7 +86,7 @@ public class MainWindow extends AbstractWindow {
     public AbstractWindow perform() {
 
         StringTokenizer commandToken;
-        String command, response = null;
+        String command, response;
         System.out.println("Enter Your choice: ");
         System.out.print("$>");
 
@@ -140,28 +141,27 @@ public class MainWindow extends AbstractWindow {
      */
     private void showRentedList() {
         try {
-            PreparedStatement stmt = db.conn.prepareStatement("SELECT * FROM RENTAL WHERE CustomerId=?;");
-            stmt.clearParameters();
-            stmt.setInt(1, userId);
-            ResultSet resultSet = stmt.executeQuery();
+            String sqlRental = "SELECT * FROM RENTAL WHERE CustomerId=?;";
+            String sqlMovie  = "SELECT Title FROM MOVIE WHERE MovieId=?;";
+
+            ResultSet resultSetRental;
+            ResultSet resultSetMovie;
+
+            resultSetRental = db.executeQuery(sqlRental, userId);
 
             System.out.println(Color.YELLOW);
             System.out.println("List of all rented videos:");
             System.out.print(Color.RESET);
 
-            while (resultSet.next()) {
+            while (resultSetRental.next()) {
 
-                stmt = db.conn.prepareStatement("SELECT Title FROM MOVIE WHERE MovieId=?;");
-                stmt.clearParameters();
-                stmt.setInt(1, resultSet.getInt("MovieId"));
-
-                ResultSet resultSetSecond = stmt.executeQuery();
-                if (resultSetSecond.next()) {
+                resultSetMovie = db.executeQuery(sqlMovie, resultSetRental.getString("MovieId"));
+                if (resultSetMovie.next()) {
 
                     System.out.print("Title: ,,");
-                    System.out.print(resultSetSecond.getString("Title"));
+                    System.out.print(resultSetMovie.getString("Title"));
                     System.out.print("''  Rented till: ");
-                    System.out.print(resultSet.getString("DueRented"));
+                    System.out.print(resultSetRental.getString("DueRented"));
                 }
                 System.out.println();
             }
@@ -178,68 +178,60 @@ public class MainWindow extends AbstractWindow {
 
         // TODO update stock
 
-        String title = "";
+        String titleString = "";
         int movieId;
 
         // Combine all rest command together (needed in case of two part title like ,,Toy Story'')
-        while (commandToken.hasMoreTokens()) title += commandToken.nextToken() + " ";
-        title = title.trim();
+        StringBuilder title = new StringBuilder("");
+        while (commandToken.hasMoreTokens()) {
+            title.append(commandToken.nextToken());
+            title.append(" ");
+        }
+        titleString = title.toString().trim();
+
 
         try {
-
-            PreparedStatement stmt = db.conn.prepareStatement("SELECT MovieId FROM MOVIE WHERE Title = ?;");
-            PreparedStatement stmtHistory;
-            stmt.clearParameters();
-            stmt.setString(1, title);
-            ResultSet resultSet = stmt.executeQuery();
-
-
-            movieId = resultSet.getInt("MovieId");
-
-            stmt = db.conn.prepareStatement("INSERT INTO RENTAL(CustomerId, MovieId, DueRented) VALUES(?,?,?);");
-            stmtHistory = db.conn.prepareStatement("INSERT INTO RENTAL_HISTORY(CustomerId, MovieId, DueRented) VALUES(?,?,?);");
-
-            stmt.clearParameters();
-            stmt.setInt(1, userId);
-            stmt.setInt(2, movieId);
-
-            stmtHistory.clearParameters();
-            stmtHistory.setInt(1, userId);
-            stmtHistory.setInt(2, movieId);
+            String sql = "SELECT MovieId FROM MOVIE WHERE Title = ?;";
+            String sqlRental = "INSERT INTO RENTAL(CustomerId, MovieId, DueRented) VALUES(?,?,?)";
+            String sqlRentalHistory = "INSERT INTO RENTAL_HISTORY(CustomerId, MovieId, DueRented) VALUES(?,?,?);";
+            String sqlCheckExistenceInRental = "SELECT * FROM RENTAL WHERE CustomerId=? AND MovieId=?;";
 
 
             Calendar cal = Calendar.getInstance();
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-
-            // Rent for two days
+            // Set time for two day in future
             cal.add(Calendar.DATE, 2);
-
             java.sql.Date sqlDate = new java.sql.Date(cal.getTime().getTime());
 
-            stmt.setString(3, sqlDate.toString());
-            stmtHistory.setString(3, sqlDate.toString());
-
-
-            // Check if user is holding a video
-            PreparedStatement stmt2 = db.conn.prepareStatement("SELECT * FROM RENTAL WHERE CustomerId=? AND MovieId=?;");
-            stmt2.clearParameters();
-            stmt2.setInt(1, userId);
-            stmt2.setInt(2, movieId);
-            ResultSet resultSet2 = stmt2.executeQuery();
-            if (resultSet2.next() == false) {
-
-                // Add row into database -  Rental table
-                stmt.executeUpdate();
-                System.out.print(Color.GREEN);
-                System.out.println("You have succesfully rented a movie ,," + title + "''");
-                System.out.println(Color.RESET);
-
-                // Add row into database -  Rental_History table
-                stmtHistory.executeUpdate();
-            } else {
+            // Find a movie by title
+            ResultSet resultSet = db.executeQuery(sql, titleString);
+            if (!resultSet.next()) {
                 System.out.print(Color.RED);
-                System.out.println("Sorry. You are currently renting this video.");
+                System.out.println("Sorry. There is no movie with this title.");
                 System.out.print(Color.RESET);
+            } else {
+                // get id of movie
+                movieId = resultSet.getInt("MovieId");
+
+                // Check if user is holding a video
+                ResultSet existRental = db.executeQuery(sqlCheckExistenceInRental, userId, movieId);
+
+
+                if (!existRental.next()) {
+
+                    // Add row into database -  Rental table
+                    db.executeUpdate(sqlRental, userId, movieId, sqlDate.toString());
+
+                    System.out.print(Color.GREEN);
+                    System.out.println("You have succesfully rented a movie ,," + title + "''");
+                    System.out.println(Color.RESET);
+
+                    // Add row into database -  Rental_History table
+                    db.executeUpdate(sqlRentalHistory, userId, movieId, sqlDate.toString());
+                } else {
+                    System.out.print(Color.RED);
+                    System.out.println("Sorry. You are currently renting this video.");
+                    System.out.print(Color.RESET);
+                }
             }
 
         } catch (SQLException e) {
@@ -253,28 +245,30 @@ public class MainWindow extends AbstractWindow {
      */
     private void showHistory() {
         try {
-            PreparedStatement stmt = db.conn.prepareStatement("SELECT * FROM RENTAL_HISTORY WHERE CustomerId=?;");
-            stmt.clearParameters();
-            stmt.setInt(1, userId);
-            ResultSet resultSet = stmt.executeQuery();
+            String sqlLookHistory = "SELECT * FROM RENTAL_HISTORY WHERE CustomerId=?;";
+            String sqlGetTitle = "SELECT Title FROM MOVIE WHERE MovieId=?;";
+            ResultSet resultSetHistory;
+            ResultSet resultSetMovie;
+
 
             System.out.println(Color.YELLOW);
             System.out.println("List of all ever rented videos:");
             System.out.print(Color.RESET);
 
-            while (resultSet.next()) {
+            resultSetHistory = db.executeQuery(sqlLookHistory, userId);
 
-                stmt = db.conn.prepareStatement("SELECT Title FROM MOVIE WHERE MovieId=?;");
-                stmt.clearParameters();
-                stmt.setInt(1, resultSet.getInt("MovieId"));
+            // if found something in history
+            while (resultSetHistory.next()) {
 
-                ResultSet resultSetSecond = stmt.executeQuery();
-                if (resultSetSecond.next()) {
+                // Look for every specification information is Movie table
+                resultSetMovie = db.executeQuery(sqlGetTitle, resultSetHistory.getString("MovieId"));
+
+                if (resultSetMovie.next()) {
 
                     System.out.print("Title: ,,");
-                    System.out.print(resultSetSecond.getString("Title"));
+                    System.out.print(resultSetMovie.getString("Title"));
                     System.out.print("''  Rented till: ");
-                    System.out.print(resultSet.getString("DueRented"));
+                    System.out.print(resultSetHistory.getString("DueRented"));
                 }
                 System.out.println();
             }
@@ -289,8 +283,8 @@ public class MainWindow extends AbstractWindow {
      */
     private void showList() {
         try {
-            Statement stmt = db.conn.createStatement();
-            ResultSet resultSet = stmt.executeQuery("SELECT * FROM MOVIE WHERE Stack>0;");
+            String sql = "SELECT * FROM MOVIE WHERE Stack > ?;";
+            ResultSet resultSet = db.executeQuery(sql, 0);
 
             System.out.println(Color.YELLOW);
             System.out.println("List of all available videos:");
@@ -312,20 +306,18 @@ public class MainWindow extends AbstractWindow {
     /**
      * A method prints detail information about specific movie given as parameter
      *
-     * @param commandToken
+     * @param commandToken A whole wrap for strings in given paramet like [] (list [Toy Story])
      */
     private void showSpecificMovie(StringTokenizer commandToken) {
-        String command = "";
+        String title = "";
 
         // Combine all rest command together (needed in case of two part title like ,,Toy Story'')
-        while (commandToken.hasMoreTokens()) command += commandToken.nextToken() + " ";
-        command = command.trim();
+        while (commandToken.hasMoreTokens()) title += commandToken.nextToken() + " ";
+        title = title.trim();
 
         try {
-            PreparedStatement stmt = db.conn.prepareStatement("SELECT * FROM MOVIE WHERE Title = ? ;");
-            stmt.clearParameters();
-            stmt.setString(1, command);
-            ResultSet resultSet = stmt.executeQuery();
+            String sql = "SELECT * FROM MOVIE WHERE Title = ? ;";
+            ResultSet resultSet = db.executeQuery(sql, title);
 
             System.out.println(Color.YELLOW);
             System.out.println("Information about movie:");
@@ -357,7 +349,7 @@ public class MainWindow extends AbstractWindow {
         System.out.println("=============HELP===========");
         System.out.println("Explanation of each option:");
         System.out.println("  -list             List all available movies in stock.");
-        System.out.println("  -list <movie>     List information about <movie> e.g list Cars will");
+        System.out.println("  -list <movie>     List information about <movie> e.g list Cars");
         System.out.println("                    will list informations about ,,Cars'' movie.");
         System.out.println("  -rent             Show all rented movies.");
         System.out.println("  -rent <movie>     Rent a <movie> e.g rent Cars will");

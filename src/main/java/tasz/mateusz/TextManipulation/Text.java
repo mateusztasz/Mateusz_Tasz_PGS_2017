@@ -61,9 +61,9 @@ public class Text {
 
     public static boolean makeSure(String typed, String desired) {
         System.out.println("You typed a command >>" + typed + "<<");
-        System.out.println("Did you mean? >>" + desired + "<<");
-        System.out.println("Confirm >>[Y]/[y] <<");
-        System.out.println("Decline >>[anything] <<");
+        System.out.println("Did you mean?       >>" + desired + "<<");
+        System.out.println("Confirm >>[Y]/[y]<<");
+        System.out.println("Decline >>[type anything]<<");
         System.out.print("$>");
         Scanner scan = new Scanner(System.in); //obiekt do odebrania danych od użytkownika
 
