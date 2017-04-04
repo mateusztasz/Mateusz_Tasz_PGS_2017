@@ -5,6 +5,8 @@ package tasz.mateusz;
  */
 
 
+import tasz.mateusz.TextManipulation.Color;
+
 import java.sql.*;
 import java.util.Map;
 
@@ -99,6 +101,19 @@ public class DataBaseHandler {
         return stmt.executeUpdate();
     }
 
+    public int executeUpdate(String sql,String arg1, float arg2, int arg3, int arg4) throws SQLException{
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.clearParameters();
+        stmt.setString(1,arg1);
+        stmt.setFloat(2, arg2);
+        stmt.setInt(3, arg3);
+        stmt.setInt(4, arg4);
+
+
+        return stmt.executeUpdate();
+    }
+
+
     public int executeUpdate(String sql, Map<String, Object> map) throws SQLException{
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.clearParameters();
@@ -109,7 +124,6 @@ public class DataBaseHandler {
         stmt.setString(4, map.get("Surname").toString());
         stmt.setString(5, map.get("Address").toString());
         stmt.setInt   (6, Integer.parseInt(map.get("Phone").toString()));
-
 
         return stmt.executeUpdate();
     }

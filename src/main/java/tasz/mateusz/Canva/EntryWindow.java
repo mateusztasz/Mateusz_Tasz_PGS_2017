@@ -45,6 +45,7 @@ public class EntryWindow extends AbstractWindow {
         System.out.println("|       $> login           |");
         System.out.println("|       $> create user     |");
         System.out.println("|       $> list users      |");
+        System.out.println("|       $> menu            |");
         System.out.println("|       $> help            |");
         System.out.println("|       $> exit            |");
         System.out.println("============================");
@@ -77,7 +78,9 @@ public class EntryWindow extends AbstractWindow {
             return this;
         } else if (validate(command, "list users")) {
             this.listCustomers();
-        } else if (validate(command, "help")) {
+        } else if (validate(command, "menu")) {
+            showMenu();
+        }else if (validate(command, "help")) {
             showHelp();
         } else if (validate(command, "exit")) {
             return new ExitWindow();
@@ -201,7 +204,9 @@ public class EntryWindow extends AbstractWindow {
      */
     private void createUser() {
         String sqlCreateUser = "insert into CUSTOMER(Login, Pass, Name, Surname, Address, Phone) values(?,?,?,?,?,?);";
-        String sqlCustomer = "SELECT * FROM CUSTOMER;";
+        String sqlCustomer = "select * from CUSTOMER;";
+
+        String sqlCustomerWithLogin =  "select * from CUSTOMER where Login = ?;";
 
         ResultSet resultSetCustomer;
         ResultSetMetaData resultSetCustomer_MetaData;
@@ -211,6 +216,8 @@ public class EntryWindow extends AbstractWindow {
 
         // Takes data from user
         Scanner scanLogin = new Scanner(System.in);
+
+
 
         try {
             // Get meta data about columns name
@@ -222,7 +229,15 @@ public class EntryWindow extends AbstractWindow {
 
                 System.out.print(resultSetCustomer_MetaData.getColumnName(i) + " :");
                 map.put(resultSetCustomer_MetaData.getColumnName(i), scanLogin.nextLine());
+
             }
+
+            ResultSet resultSet = db.executeQuery(sqlCustomerWithLogin, map.get("Login").toString());
+            if(resultSet.next())
+                throw new SQLException(Color.RED + "User with this login already exists."+Color.RESET);
+
+            if(map.get("Phone").toString().length() != 9)
+                throw new SQLException(Color.RED + "The Phone format is incorrect"+Color.RESET);
 
             System.out.println();
 

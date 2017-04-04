@@ -7,13 +7,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import java.util.StringTokenizer;
-import java.util.NoSuchElementException;
+import java.sql.ResultSetMetaData;
+import java.util.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import java.util.Calendar;
 
 
 /**
@@ -64,9 +62,10 @@ public class MainWindow extends AbstractWindow {
         System.out.println("============================");
         System.out.println("|                          |");
         System.out.println("|       $> list            |");
-        System.out.println("|       $> list <movie>    |");
+        System.out.println("|       $> list <title>    |");
         System.out.println("|       $> rent            |");
-        System.out.println("|       $> rent <movie>    |");
+        System.out.println("|       $> rent <title>    |");
+        System.out.println("|       $> add <title>     |");
         System.out.println("|       $> history         |");
         System.out.println("|       $> menu            |");
         System.out.println("|       $> help            |");
@@ -119,6 +118,12 @@ public class MainWindow extends AbstractWindow {
 
             return this;
 
+        } else if (validate(command, "add")) {
+
+            addMovie(commandToken);
+
+            return this;
+
         } else if (validate(command, "history")) {
             showHistory();
         } else if (validate(command, "menu")) {
@@ -141,7 +146,7 @@ public class MainWindow extends AbstractWindow {
     private void showRentedList() {
         try {
             String sqlRental = "SELECT * FROM RENTAL WHERE CustomerId=?;";
-            String sqlMovie  = "SELECT Title FROM MOVIE WHERE MovieId=?;";
+            String sqlMovie = "SELECT Title FROM MOVIE WHERE MovieId=?;";
 
             ResultSet resultSetRental;
             ResultSet resultSetMovie;
@@ -170,6 +175,75 @@ public class MainWindow extends AbstractWindow {
     }
 
 
+    private void addMovie(StringTokenizer commandToken) {
+
+        // Allow this feature only for admins. Users with admin privileges are
+        // Mateusz Tasz
+        // PGS Software
+        // For more see option list users in EntryWindow
+        try{
+            if(userId>2) throw new Exception("This action is allowed only for admin. You are not.\n" +
+                    "Please contact your administrator :)");
+        }
+        catch (Exception e){
+            System.out.println(Color.RED + e.getMessage() + Color.RESET);
+            return;
+        }
+
+        String sqlAddMovie = "insert into MOVIE(Title, Rating, Duration, Stack) VALUES (?,?,?,?);";
+        String sqlMovie = "select * from MOVIE;";
+        String sqlMovieFind = "select * from MOVIE where Title = ?;";
+
+        ResultSet resultSetMovie;
+        ResultSetMetaData resultSetMovie_MetaData;
+
+        Scanner scanLogin = new Scanner(System.in);
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        try {
+
+            resultSetMovie = db.executeQuery(sqlMovie);
+            resultSetMovie_MetaData = resultSetMovie.getMetaData();
+
+            // Enter data to add into database
+            for (int i = 2; i < resultSetMovie_MetaData.getColumnCount() + 1; i++) {
+
+                System.out.print(resultSetMovie_MetaData.getColumnName(i) + " :");
+                map.put(resultSetMovie_MetaData.getColumnName(i), scanLogin.nextLine());
+
+            }
+
+            ResultSet resultSet = db.executeQuery(sqlMovieFind, map.get("Title").toString());
+            if (resultSet.next())
+                throw new SQLException(Color.RED + "A movie with given title already exists." + Color.RESET);
+
+            String title = map.get("Title").toString();
+            float rating = Float.parseFloat(map.get("Rating").toString());
+            int duration = Integer.parseInt(map.get("Duration").toString());
+            int stack = Integer.parseInt(map.get("Stack").toString());
+
+            if (rating > 10 || rating < 0)
+                throw new SQLException("Rating value is not in range <0..10>.");
+            if (duration < 0)
+                throw new SQLException("Duration can not be negative.");
+            if (stack < 0)
+                throw new SQLException("Stack can not be negative.");
+
+            db.executeUpdate(sqlAddMovie, title, rating, duration, stack);
+
+            System.out.print(Color.GREEN);
+            System.out.println("You have successfully added a new movie to database");
+            System.out.println(Color.RESET);
+
+        } catch (SQLException e) {
+            System.out.println(Color.RED + "Error:" + e.getMessage() + Color.RESET);
+        } catch (NumberFormatException e) {
+            System.out.println(Color.RED + "Error:" + e.getMessage() + Color.RESET);
+        }
+
+    }
+
+
     /**
      * Method rent movie specified by the string followed by rent ...
      */
@@ -188,10 +262,9 @@ public class MainWindow extends AbstractWindow {
         }
         titleString = title.toString().trim();
 
-
         try {
             String sql = "SELECT MovieId FROM MOVIE WHERE Title = ?;";
-            String sqlRental = "INSERT INTO RENTAL(CustomerId, MovieId, DueRented) VALUES(?,?,?)";
+            String sqlRental = "INSERT INTO RENTAL(CustomerId, MovieId, DueRented) VALUES(?,?,?);";
             String sqlRentalHistory = "INSERT INTO RENTAL_HISTORY(CustomerId, MovieId, DueRented) VALUES(?,?,?);";
             String sqlCheckExistenceInRental = "SELECT * FROM RENTAL WHERE CustomerId=? AND MovieId=?;";
 
@@ -203,17 +276,15 @@ public class MainWindow extends AbstractWindow {
 
             // Find a movie by title
             ResultSet resultSet = db.executeQuery(sql, titleString);
-            if (!resultSet.next()) {
-                System.out.print(Color.RED);
-                System.out.println("Sorry. There is no movie with this title.");
-                System.out.print(Color.RESET);
-            } else {
+            if (!resultSet.next())
+                throw new SQLException("Sorry. There is no movie with this title.");
+
+            else {
                 // get id of movie
                 movieId = resultSet.getInt("MovieId");
 
                 // Check if user is holding a video
                 ResultSet existRental = db.executeQuery(sqlCheckExistenceInRental, userId, movieId);
-
 
                 if (!existRental.next()) {
 
@@ -226,15 +297,13 @@ public class MainWindow extends AbstractWindow {
 
                     // Add row into database -  Rental_History table
                     db.executeUpdate(sqlRentalHistory, userId, movieId, sqlDate.toString());
-                } else {
-                    System.out.print(Color.RED);
-                    System.out.println("Sorry. You are currently renting this video.");
-                    System.out.print(Color.RESET);
-                }
+                } else
+                    throw new SQLException("Sorry. You are currently renting this video.");
+
             }
 
         } catch (SQLException e) {
-            //System.out.println(e.getMessage());
+            System.out.println(Color.RED + e.getMessage() + Color.RESET);
         }
     }
 
@@ -272,7 +341,7 @@ public class MainWindow extends AbstractWindow {
                 System.out.println();
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println(Color.RED +  e.getMessage() + Color.RESET);
         }
     }
 
@@ -297,7 +366,7 @@ public class MainWindow extends AbstractWindow {
                 System.out.println(resultSet.getString("Rating"));
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println(Color.RED +  e.getMessage() + Color.RESET);
         }
     }
 
@@ -348,11 +417,13 @@ public class MainWindow extends AbstractWindow {
         System.out.println("=============HELP===========");
         System.out.println("Explanation of each option:");
         System.out.println("  -list             List all available movies in stock.");
-        System.out.println("  -list <movie>     List information about <movie> e.g list Cars");
+        System.out.println("  -list <title>     List information about <movie> e.g list Cars");
         System.out.println("                    will list informations about ,,Cars'' movie.");
         System.out.println("  -rent             Show all rented movies.");
-        System.out.println("  -rent <movie>     Rent a <movie> e.g rent Cars will");
+        System.out.println("  -rent <title>     Rent a <movie> e.g rent Cars will");
         System.out.println("                    will rent ,,Cars'' movie.");
+        System.out.println("  -add              Run a mechanism to add a new movie.");
+        System.out.println("                    Option is available only for admin.");
         System.out.println("  -history          Show your history of rented videos.");
         System.out.println("  -menu             Display a menu.");
         System.out.println("  -help             Print this help information.");
