@@ -7,7 +7,6 @@ package tasz.mateusz;
 
 import java.sql.*;
 import java.util.Map;
-import java.util.List;
 
 /**
  * Class gives an access to SQLite database

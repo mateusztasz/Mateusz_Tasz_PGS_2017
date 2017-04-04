@@ -6,16 +6,15 @@ import tasz.mateusz.TextManipulation.Color;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.sql.PreparedStatement;
-import java.util.List;
+
 import java.util.StringTokenizer;
 import java.util.NoSuchElementException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+
 import java.util.Calendar;
-import java.text.*;
+
 
 /**
  * Created by Mateusz on 2017-03-31.

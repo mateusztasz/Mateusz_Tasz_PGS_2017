@@ -1,14 +1,10 @@
 package tasz.mateusz;
 
-
-
 import tasz.mateusz.Canva.AbstractWindow;
 import tasz.mateusz.Canva.EntryWindow;
 import tasz.mateusz.Exception.FinishApplicationException;
 
 import java.lang.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Calendar;
