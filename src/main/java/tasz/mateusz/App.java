@@ -73,7 +73,7 @@ public class App implements Runnable {
             ResultSet resultSetRentaStar;
 
             Calendar cal = Calendar.getInstance();
-            cal.add(Calendar.DATE, 2);
+            //cal.add(Calendar.DATE, 2); // Test delete (simulate time in 2 days in future)
             java.sql.Date sqlDate = new java.sql.Date(cal.getTime().getTime());
 
             // Get all rows from Rented movies
