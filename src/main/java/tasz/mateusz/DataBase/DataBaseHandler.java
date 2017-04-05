@@ -1,10 +1,5 @@
 package tasz.mateusz.DataBase;
 
-import com.j256.ormlite.dao.Dao;
-import com.j256.ormlite.dao.DaoManager;
-import com.j256.ormlite.jdbc.JdbcConnectionSource;
-import com.j256.ormlite.support.ConnectionSource;
-
 import java.sql.*;
 import java.util.Map;
 
