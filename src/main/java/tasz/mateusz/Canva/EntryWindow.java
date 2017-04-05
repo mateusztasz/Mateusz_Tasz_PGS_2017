@@ -231,11 +231,23 @@ public class EntryWindow extends AbstractWindow {
 
             }
 
+
             ResultSet resultSet = db.executeQuery(sqlCustomerWithLogin, map.get("Login").toString());
             if (resultSet.next())
-                throw new SQLException(Color.RED + "User with this login already exists." + Color.RESET);
+                throw new SQLException("User with this login already exists.");
 
-            System.out.println();
+            if (map.get("Login").toString().equals("") ||
+                    map.get("Pass").toString().equals("") ||
+                    map.get("Name").toString().equals("") ||
+                    map.get("Surname").toString().equals("") ||
+                    map.get("Address").toString().equals("") ||
+                    map.get("Phone").toString().equals(""))
+                throw new SQLException("Sorry. Something is missing in Your input data.");
+
+
+            if (map.get("Phone").toString().length() != 9)
+                throw new SQLException("Sorry.Your phone number supposed to be of length 9.");
+                System.out.println();
 
             // Add row into database
             db.executeUpdate(sqlCreateUser, map);
@@ -252,7 +264,7 @@ public class EntryWindow extends AbstractWindow {
             System.out.println(Color.RESET);
         } catch (SQLException e) {
 
-            System.out.println(e.getMessage());
+            System.out.println(Color.RED + e.getMessage() + Color.RESET);
         }
     }
 

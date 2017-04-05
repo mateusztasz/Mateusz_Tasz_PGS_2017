@@ -3,6 +3,21 @@
 ## Opis
 Celem aplikacji jest usprawnieni pracy wypożyczalni filmów. 
 
+## Dokumentacja
+
+>**Dokładna instrukcja użytkownika  z opisem możliwości aplikacji oraz zpokazaniem 
+ krok po kroku jak danej funkcjonalności użyć znajdije się w folderze `documentation/javadoc/`**
+
+  ```
+  evince documentation/javadoc/VideoRental_Mateusz_Tasz_PGS_2017_reference_manual.pdf
+  ```
+
+ 
+ Wygenerowana automatycznie dostępna jest w folderze `documentation/javadoc/`
+  ```
+  firefox documentation/javadoc/index.html
+  ```
+
 ## Implementacja
 Aplikacja udostępnia interfejs konsolowy. 
 Korzysta ona z bazy dancyh SQLite, która jest sterowana za pomocą sterowników JDBC. 
@@ -18,12 +33,8 @@ ObjectRelationalMapping jest gałęzią pochodną od master i która w założen
 zarządzanie bazą danych za pomocą ORMLite. Na tym etapie rozwoju ORM działa i instrukcje są rozumiana
 i działają. Natomiast pełne zarządzanie bazą danych nie zostało przeniesione jeszcze na ORM.
  
-## Dokumentacja
-Wygenerowana automatycznie dostępna jest w folderze javadoc/
- ```
- firefox documentation/javadoc/index.html
- ```
- 
+
+## Dana bazych
 ## Uruchomienie paczki
 
 ### Budowanie
@@ -35,3 +46,4 @@ Budowanie następuje za pomocą narzędzia: maven
 ```
 ./run.sh
 ```
+

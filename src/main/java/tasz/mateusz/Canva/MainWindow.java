@@ -222,6 +222,8 @@ public class MainWindow extends AbstractWindow {
             int duration = Integer.parseInt(map.get("Duration").toString());
             int stack = Integer.parseInt(map.get("Stack").toString());
 
+            if(title.equals(""))
+                throw new SQLException("Title can not be empty.");
             if (rating > 10 || rating < 0)
                 throw new SQLException("Rating value is not in range <0..10>.");
             if (duration < 0)
