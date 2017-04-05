@@ -267,6 +267,7 @@ public class MainWindow extends AbstractWindow {
             String sqlRental = "INSERT INTO RENTAL(CustomerId, MovieId, DueRented) VALUES(?,?,?);";
             String sqlRentalHistory = "INSERT INTO RENTAL_HISTORY(CustomerId, MovieId, DueRented) VALUES(?,?,?);";
             String sqlCheckExistenceInRental = "SELECT * FROM RENTAL WHERE CustomerId=? AND MovieId=?;";
+            String sqlUpdateMovieStack = "update MOVIE set Stack = Stack - 1 where MovieId = ?;";
 
 
             Calendar cal = Calendar.getInstance();
@@ -297,6 +298,9 @@ public class MainWindow extends AbstractWindow {
 
                     // Add row into database -  Rental_History table
                     db.executeUpdate(sqlRentalHistory, userId, movieId, sqlDate.toString());
+
+                    // Decrase stack of this movie
+                    db.executeUpdate(sqlUpdateMovieStack, movieId);
                 } else
                     throw new SQLException("Sorry. You are currently renting this video.");
 

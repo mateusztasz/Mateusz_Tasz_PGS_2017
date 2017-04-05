@@ -7,6 +7,8 @@ import tasz.mateusz.Exception.FinishApplicationException;
 
 import java.lang.*;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.Calendar;
 
@@ -64,12 +66,25 @@ public class App implements Runnable {
      */
     public void run() {
         try {
-            String sql = "DELETE FROM RENTAL WHERE DueRented=?;";
+            String sqlDelete = "DELETE FROM RENTAL WHERE DueRented=?;";
+            String sqlRentalStar = "select * from RENTAL WHERE DueRented=?;";
+            String sqlUpdateMovieStack = "update MOVIE set Stack = Stack + 1 where MovieId = ?;";
+
+            ResultSet resultSetRentaStar;
 
             Calendar cal = Calendar.getInstance();
+            cal.add(Calendar.DATE, 2);
             java.sql.Date sqlDate = new java.sql.Date(cal.getTime().getTime());
 
-            db.executeUpdate(sql, sqlDate.toString());
+            // Get all rows from Rented movies
+            resultSetRentaStar = db.executeQuery(sqlRentalStar, sqlDate.toString());
+
+            //delete these for which date is today
+            db.executeUpdate(sqlDelete, sqlDate.toString());
+
+            //increase stack of returned videos
+            while (resultSetRentaStar.next())
+                db.executeUpdate(sqlUpdateMovieStack, resultSetRentaStar.getString("MovieId"));
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());

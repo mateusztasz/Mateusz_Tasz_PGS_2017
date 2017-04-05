@@ -81,7 +81,6 @@ public class DataBaseHandler {
      * @throws SQLException Database Driver raise exception
      */
     public ResultSet executeQuery(String sql) throws SQLException {
-
         PreparedStatement stmt = conn.prepareStatement(sql);
         return stmt.executeQuery();
     }
@@ -96,7 +95,6 @@ public class DataBaseHandler {
      * @throws SQLException Database Driver raise exception
      */
     public ResultSet executeQuery(String sql, int... args) throws SQLException {
-
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.clearParameters();
         int i = 1;
@@ -113,7 +111,27 @@ public class DataBaseHandler {
      *
      * @param sql Query to database like (insert into TABLE where Name=?;)
      * @param args Arguments from sql query noted as '?' String type
-     * @return 0 if no rows affected, 1 otherwise
+     * @return 0 if no rows affected, otherwise number of affected rows
+     * @throws SQLException Database Driver raise exception
+     */
+    public int executeUpdate(String sql, int...args) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.clearParameters();
+        int i = 1;
+
+        for (int elem : args) {
+            stmt.setInt(i++, elem);
+        }
+        return stmt.executeUpdate();
+    }
+
+
+    /**
+     * Prepare and execute sql query according to sql command and arguments
+     *
+     * @param sql Query to database like (insert into TABLE where Name=?;)
+     * @param args Arguments from sql query noted as '?' String type
+     * @return 0 if no rows affected, otherwise number of affected rows
      * @throws SQLException Database Driver raise exception
      */
     public int executeUpdate(String sql, String...args) throws SQLException {
@@ -135,7 +153,7 @@ public class DataBaseHandler {
      * @param arg1 Argument from sql query noted as '?' int type
      * @param arg2 Argument from sql query noted as '?' int type
      * @param arg3 Argument from sql query noted as '?' String type
-     * @return 0 if no rows affected, 1 otherwise
+     * @return 0 if no rows affected, otherwise number of affected rows
      * @throws SQLException Database Driver raise exception
      */
     public int executeUpdate(String sql, int arg1, int arg2, String arg3) throws SQLException {
@@ -157,7 +175,7 @@ public class DataBaseHandler {
      * @param arg2 Argument from sql query noted as '?' int type
      * @param arg3 Argument from sql query noted as '?' int type
      * @param arg4 Argument from sql query noted as '?' int type
-     * @return 0 if no rows affected, 1 otherwise
+     * @return 0 if no rows affected, otherwise number of affected rows
      * @throws SQLException Database Driver raise exception
      */
     public int executeUpdate(String sql, String arg1, float arg2, int arg3, int arg4) throws SQLException {
@@ -177,7 +195,7 @@ public class DataBaseHandler {
      *
      * @param sql Query to database like (insert into TABLE where Name=?;)
      * @param map A map of arguments
-     * @return 0 if no rows affected, 1 otherwise
+     * @return 0 if no rows affected, otherwise number of affected rows
      * @throws SQLException Database Driver raise exception
      */
     public int executeUpdate(String sql, Map<String, Object> map) throws SQLException {
