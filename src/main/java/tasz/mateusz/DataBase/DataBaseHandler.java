@@ -1,5 +1,10 @@
 package tasz.mateusz.DataBase;
 
+import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.dao.DaoManager;
+import com.j256.ormlite.jdbc.JdbcConnectionSource;
+import com.j256.ormlite.support.ConnectionSource;
+
 import java.sql.*;
 import java.util.Map;
 
@@ -13,6 +18,8 @@ public class DataBaseHandler {
      * A connection field
      */
     public Connection conn = null;
+
+    public Dao<Customer, String> customerDao;
 
     /**
      * A constructor. Connects to the database
@@ -31,6 +38,10 @@ public class DataBaseHandler {
             String url = "jdbc:sqlite::resource:db.sqlite";
 
             conn = DriverManager.getConnection(url);    // create a connection to the database
+
+            // ALternative way to connect to database  - use ORM
+            ConnectionSource connectionSource = new JdbcConnectionSource(url);
+            customerDao = DaoManager.createDao(connectionSource, Customer.class);
 
             System.out.println("Connection to SQLite has been established.");
         } catch (SQLException e) {
@@ -109,12 +120,12 @@ public class DataBaseHandler {
     /**
      * Prepare and execute sql query according to sql command and arguments
      *
-     * @param sql Query to database like (insert into TABLE where Name=?;)
+     * @param sql  Query to database like (insert into TABLE where Name=?;)
      * @param args Arguments from sql query noted as '?' String type
      * @return 0 if no rows affected, otherwise number of affected rows
      * @throws SQLException Database Driver raise exception
      */
-    public int executeUpdate(String sql, int...args) throws SQLException {
+    public int executeUpdate(String sql, int... args) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.clearParameters();
         int i = 1;
@@ -129,12 +140,12 @@ public class DataBaseHandler {
     /**
      * Prepare and execute sql query according to sql command and arguments
      *
-     * @param sql Query to database like (insert into TABLE where Name=?;)
+     * @param sql  Query to database like (insert into TABLE where Name=?;)
      * @param args Arguments from sql query noted as '?' String type
      * @return 0 if no rows affected, otherwise number of affected rows
      * @throws SQLException Database Driver raise exception
      */
-    public int executeUpdate(String sql, String...args) throws SQLException {
+    public int executeUpdate(String sql, String... args) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.clearParameters();
         int i = 1;
