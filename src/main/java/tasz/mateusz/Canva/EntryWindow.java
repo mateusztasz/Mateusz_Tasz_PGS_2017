@@ -235,9 +235,6 @@ public class EntryWindow extends AbstractWindow {
             if (resultSet.next())
                 throw new SQLException(Color.RED + "User with this login already exists." + Color.RESET);
 
-            if (map.get("Phone").toString().length() != 9)
-                throw new SQLException(Color.RED + "The Phone format is incorrect" + Color.RESET);
-
             System.out.println();
 
             // Add row into database
