@@ -1,3 +1,3 @@
 #!/bin/bash
-mvn clean compile package site;
+mvn clean compile package;
 
