@@ -24,8 +24,8 @@ public abstract class AbstractWindow {
      * Virtual method which perform action from user.
      * It reads input buffer and run proper method.
      *
-     * @return window A type of window
-     * @throws FinishApplicationException
+     * @return A type of window
+     * @throws FinishApplicationException May throw exception in order to exit application
      */
     abstract public AbstractWindow perform () throws FinishApplicationException;
 

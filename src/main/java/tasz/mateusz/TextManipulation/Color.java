@@ -1,7 +1,8 @@
 package tasz.mateusz.TextManipulation;
 
 /**
- * Created by taszzmat on 2017-04-03.
+ * Class allows to manage color of letters in System.out. It uses ANSI C codes.
+ * These color works on Linux and Windows in Powershell.
  */
 public class Color {
 

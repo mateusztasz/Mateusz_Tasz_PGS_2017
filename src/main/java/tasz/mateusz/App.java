@@ -2,6 +2,7 @@ package tasz.mateusz;
 
 import tasz.mateusz.Canva.AbstractWindow;
 import tasz.mateusz.Canva.EntryWindow;
+import tasz.mateusz.DataBase.DataBaseHandler;
 import tasz.mateusz.Exception.FinishApplicationException;
 
 import java.lang.*;
@@ -11,7 +12,7 @@ import java.util.Calendar;
 
 
 /**
- * Created by Mateusz on 2017-03-31.
+ * Main application class. Implements application which is desired to use of Video Rental
  *
  * @author Mateusz Tasz
  * @since 2017-03-31
@@ -30,20 +31,17 @@ public class App implements Runnable {
 
 
     /**
-     * An entry to the application.
+     * An entry to the application. Main function executed
      *
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-        // TODO clean names of variables - specifically stmt in PrepareStatement
 
         db = new DataBaseHandler();
         window = new EntryWindow(db);
 
         // Start a thread to update a overdued rentals/
         (new Thread(new App())).start();
-
 
         while (true) {
 
@@ -57,6 +55,7 @@ public class App implements Runnable {
         db.close();
     }
 
+
     /**
      * A function clears all row from RENTAL table for which due rented is reached.
      * This function is run once at the beginning of application.
@@ -65,14 +64,12 @@ public class App implements Runnable {
      */
     public void run() {
         try {
-            PreparedStatement stmt = db.conn.prepareStatement("DELETE FROM RENTAL WHERE DueRented=?;");
-            stmt.clearParameters();
+            String sql = "DELETE FROM RENTAL WHERE DueRented=?;";
 
             Calendar cal = Calendar.getInstance();
-
             java.sql.Date sqlDate = new java.sql.Date(cal.getTime().getTime());
-            stmt.setString(1, sqlDate.toString());
-            stmt.executeUpdate();
+
+            db.executeUpdate(sql, sqlDate.toString());
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());

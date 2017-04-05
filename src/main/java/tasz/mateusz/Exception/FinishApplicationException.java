@@ -1,11 +1,16 @@
 package tasz.mateusz.Exception;
 
 /**
- * Created by Mateusz on 01.04.2017.
+ * Class of my own exception. Allows to exit application.
  */
 
 public class FinishApplicationException extends Exception {
 
+    /**
+     * Constructor
+     *
+     * @param message Message passed
+     */
     public FinishApplicationException(String message) {
         super(message);
     }

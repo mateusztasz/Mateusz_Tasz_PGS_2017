@@ -1,6 +1,6 @@
 package tasz.mateusz.Canva;
 
-import tasz.mateusz.DataBaseHandler;
+import tasz.mateusz.DataBase.DataBaseHandler;
 import tasz.mateusz.TextManipulation.Color;
 
 import java.io.BufferedReader;
@@ -15,7 +15,8 @@ import java.sql.SQLException;
 
 
 /**
- * Created by Mateusz on 2017-03-31.
+ * Class for create and manage with main window.
+ * Main window is a window which is shown for logged in users.
  */
 public class MainWindow extends AbstractWindow {
     /**
@@ -65,7 +66,7 @@ public class MainWindow extends AbstractWindow {
         System.out.println("|       $> list <title>    |");
         System.out.println("|       $> rent            |");
         System.out.println("|       $> rent <title>    |");
-        System.out.println("|       $> add <title>     |");
+        System.out.println("|       $> add             |");
         System.out.println("|       $> history         |");
         System.out.println("|       $> menu            |");
         System.out.println("|       $> help            |");
@@ -115,13 +116,10 @@ public class MainWindow extends AbstractWindow {
             // Check whether input is 'rent' or 'rent ...'
             if (commandToken.hasMoreElements()) rentSpecificMovie(commandToken);
             else showRentedList();
-
             return this;
 
         } else if (validate(command, "add")) {
-
-            addMovie(commandToken);
-
+            addMovie();
             return this;
 
         } else if (validate(command, "history")) {
@@ -174,18 +172,20 @@ public class MainWindow extends AbstractWindow {
         }
     }
 
-
-    private void addMovie(StringTokenizer commandToken) {
+    /**
+     * Method add a new movie to databse.
+     * It is allowed only for admin users.
+     */
+    private void addMovie() {
 
         // Allow this feature only for admins. Users with admin privileges are
         // Mateusz Tasz
         // PGS Software
         // For more see option list users in EntryWindow
-        try{
-            if(userId>2) throw new Exception("This action is allowed only for admin. You are not.\n" +
+        try {
+            if (userId > 2) throw new Exception("This action is allowed only for admin. You are not.\n" +
                     "Please contact your administrator :)");
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println(Color.RED + e.getMessage() + Color.RESET);
             return;
         }
@@ -341,7 +341,7 @@ public class MainWindow extends AbstractWindow {
                 System.out.println();
             }
         } catch (SQLException e) {
-            System.out.println(Color.RED +  e.getMessage() + Color.RESET);
+            System.out.println(Color.RED + e.getMessage() + Color.RESET);
         }
     }
 
@@ -366,7 +366,7 @@ public class MainWindow extends AbstractWindow {
                 System.out.println(resultSet.getString("Rating"));
             }
         } catch (SQLException e) {
-            System.out.println(Color.RED +  e.getMessage() + Color.RESET);
+            System.out.println(Color.RED + e.getMessage() + Color.RESET);
         }
     }
 
@@ -377,15 +377,20 @@ public class MainWindow extends AbstractWindow {
      * @param commandToken A whole wrap for strings in given paramet like [] (list [Toy Story])
      */
     private void showSpecificMovie(StringTokenizer commandToken) {
-        String title = "";
+        String titleString = "";
 
         // Combine all rest command together (needed in case of two part title like ,,Toy Story'')
-        while (commandToken.hasMoreTokens()) title += commandToken.nextToken() + " ";
-        title = title.trim();
+        StringBuilder title = new StringBuilder("");
+        while (commandToken.hasMoreTokens()) {
+            title.append(commandToken.nextToken());
+            title.append(" ");
+        }
+        titleString = title.toString().trim();
+
 
         try {
             String sql = "SELECT * FROM MOVIE WHERE Title = ? ;";
-            ResultSet resultSet = db.executeQuery(sql, title);
+            ResultSet resultSet = db.executeQuery(sql, titleString);
 
             System.out.println(Color.YELLOW);
             System.out.println("Information about movie:");

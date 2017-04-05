@@ -1,31 +1,30 @@
 package tasz.mateusz.Canva;
 
-/**
- * Created by Mateusz on 2017-03-31.
- */
-
 import java.sql.*;
 import java.util.Scanner;
 import java.util.*;
 
-import tasz.mateusz.DataBaseHandler;
+import tasz.mateusz.DataBase.DataBaseHandler;
 import tasz.mateusz.TextManipulation.Color;
 
+
+/**
+ * Class for create and manage with entry window.
+ * Entry window is a window which is shown for not logged in users.
+ */
 public class EntryWindow extends AbstractWindow {
     /**
      * Database handler for this specific window.
      */
     private DataBaseHandler db;
 
-    private static final String CUSTOMER_CREATE_NEW =
-            "INSERT INTO CUSTOMER(Login, Pass, Name, Surname, Address, Phone) VALUES(?,?,?,?,?,?);";
-    private PreparedStatement customerCreateNewStatement;
 
+    /**
+     * Construct EntryWindow - welcome window
+     *
+     * @param db Handler to database
+     */
     public EntryWindow(DataBaseHandler db) {
-        this(db, null);
-    }
-
-    private EntryWindow(DataBaseHandler db, String name) {
         this.db = db;
         showMenu();
     }
@@ -80,7 +79,7 @@ public class EntryWindow extends AbstractWindow {
             this.listCustomers();
         } else if (validate(command, "menu")) {
             showMenu();
-        }else if (validate(command, "help")) {
+        } else if (validate(command, "help")) {
             showHelp();
         } else if (validate(command, "exit")) {
             return new ExitWindow();
@@ -91,6 +90,8 @@ public class EntryWindow extends AbstractWindow {
 
 
     /**
+     * Login user (customer or admin) using database
+     *
      * @return userId User identification from database if logged in. Otherwise returns -1
      */
     private int login() {
@@ -126,7 +127,7 @@ public class EntryWindow extends AbstractWindow {
 
             if (resultSetCustomerStar.next()) {
                 name = resultSetCustomerStar.getString("Name");
-                surname = resultSetCustomerStar.getString("surname");
+                surname = resultSetCustomerStar.getString("Surname");
             }
 
             // Print info about success
@@ -150,7 +151,7 @@ public class EntryWindow extends AbstractWindow {
 
 
     /**
-     * Method list all Customers from databate. Prints only name and surname.
+     * Method list all Customers from database. Prints only name and surname.
      */
     private void listCustomers() {
         String sql = "SELECT * FROM CUSTOMER;";
@@ -206,7 +207,7 @@ public class EntryWindow extends AbstractWindow {
         String sqlCreateUser = "insert into CUSTOMER(Login, Pass, Name, Surname, Address, Phone) values(?,?,?,?,?,?);";
         String sqlCustomer = "select * from CUSTOMER;";
 
-        String sqlCustomerWithLogin =  "select * from CUSTOMER where Login = ?;";
+        String sqlCustomerWithLogin = "select * from CUSTOMER where Login = ?;";
 
         ResultSet resultSetCustomer;
         ResultSetMetaData resultSetCustomer_MetaData;
@@ -216,8 +217,6 @@ public class EntryWindow extends AbstractWindow {
 
         // Takes data from user
         Scanner scanLogin = new Scanner(System.in);
-
-
 
         try {
             // Get meta data about columns name
@@ -233,11 +232,11 @@ public class EntryWindow extends AbstractWindow {
             }
 
             ResultSet resultSet = db.executeQuery(sqlCustomerWithLogin, map.get("Login").toString());
-            if(resultSet.next())
-                throw new SQLException(Color.RED + "User with this login already exists."+Color.RESET);
+            if (resultSet.next())
+                throw new SQLException(Color.RED + "User with this login already exists." + Color.RESET);
 
-            if(map.get("Phone").toString().length() != 9)
-                throw new SQLException(Color.RED + "The Phone format is incorrect"+Color.RESET);
+            if (map.get("Phone").toString().length() != 9)
+                throw new SQLException(Color.RED + "The Phone format is incorrect" + Color.RESET);
 
             System.out.println();
 

@@ -8,7 +8,9 @@ import java.util.Scanner;
 public class Text {
     /**
      * Calculates the similarity (a number within 0 and 1) between two strings.
-     * @return r Returns number from 0 to 1 - how good two strings are similar.
+     * @param s1 First string
+     * @param s2 Second string
+     * @return  Number from 0 to 1 - how good two strings are similar.
      */
     public static double similarity(String s1, String s2) {
         String longer = s1, shorter = s2;
@@ -27,8 +29,8 @@ public class Text {
     /**
      * Calculates difference between strings using LavenStein algorithm.
      *
-     * @param s1 first string
-     * @param s2 second string
+     * @param s1 First string
+     * @param s2 Second string
      * @return How similar are whose s1 and s2
      */
     private static int levenshteinDistance(String s1, String s2) {
@@ -59,6 +61,13 @@ public class Text {
     }
 
 
+    /**
+     * Method is called in order to make sure whether the typed word with misclick
+     * should have been something else
+     * @param typed Typed string by user, probably with misclick
+     * @param desired A string which probably was in user mind
+     * @return True if user accept desired word
+     */
     public static boolean makeSure(String typed, String desired) {
         System.out.println("You typed a command >>" + typed + "<<");
         System.out.println("Did you mean?       >>" + desired + "<<");

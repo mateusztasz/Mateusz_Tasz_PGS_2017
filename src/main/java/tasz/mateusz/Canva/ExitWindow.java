@@ -1,14 +1,15 @@
 package tasz.mateusz.Canva;
 
-/**
- * Created by Mateusz on 01.04.2017.
- */
-
 import tasz.mateusz.TextManipulation.Color;
 import tasz.mateusz.Exception.FinishApplicationException;
 
+
+/**
+ * Class for create and manage with exit window.
+ * Exit window is a window which is shown to say good bye to user.
+ */
 public class ExitWindow extends AbstractWindow {
-    ExitWindow(){
+    ExitWindow() {
         showMenu();
     }
 
@@ -32,6 +33,8 @@ public class ExitWindow extends AbstractWindow {
 
     /**
      * Method performs action for ExitWindow (exit application)
+     *
+     * @throws FinishApplicationException Exception which cause end of application
      */
     @Override
     public AbstractWindow perform() throws FinishApplicationException {
